@@ -3,7 +3,12 @@
   
     {{ partial "video-intro.html" . }}
 
-    <!-- {{ partial "carousel.html" . }} -->
+<div class="container">
+        {{ partial "carousel.html" . }}
 
-    {{ partial "blog-posts.html" . }}
+        {{ partial "blog-posts.html" . }}
+
+        {{ partial "social.html" . }}
+
+</div>
 {{ end }}

@@ -1,20 +1,21 @@
 <!-- Intro Header -->
-<header class="intro">
-<div id="P1" class="player bg-secondary h-75" 
-     data-property="{videoURL:'http://youtu.be/My4H2ZR8xCg',containment:'#P1',startAt:0,autoPlay:false,loop:false,vol:80,opacity:1}">
+<header>
+    <div class="container">
+
+<div id="P1" class="player bg-secondary" 
+     data-property="{videoURL:'http://youtu.be/My4H2ZR8xCg',containment:'#P1',startAt:0,autoPlay:true,loop:false,vol:80,mute:false,opacity:1,optimizeDisplay:true}">
      
 
      <div class="container text-white">
-            <button class="btn btn-info btn-lg" onclick="jQuery('#P1').YTPPlay()">Play</button>
-            <button class="btn btn-info btn-lg" onclick="jQuery('#P1').YTPPause()">Pause</button>
-            <button class="btn btn-info btn-lg" onclick="jQuery('#P1').YTPToggleVolume()">Unmute/Mute</button>
-        <article>
-            <h1 class="h1">{{ .Title }}</h1>
-            {{ .Content }} 
+        <article class="">
+             <button class="btn btn-info" onclick="jQuery('#P1').YTPPlay()">Play</button> <button class="btn btn-info" onclick="jQuery('#P1').YTPPause()">Pause</button>
+                <button class="btn btn-info" onclick="jQuery('#P1').YTPToggleVolume()">Unmute/Mute</button>
+            <!-- {{ .Content }}  -->
         </article>
-    
+  
 
     </div>
+</div>
 </div>
 
 </header>

@@ -1,0 +1,9 @@
+{{ $element:= .}} 2
+{{ with .Site.GetPage "section" "images" }} 3
+    {{$imageFName := replace $element.imageUrl "/images/" "" }} 4
+    {{ $imageFName }}  5
+    <!-- {{ with .Resources.GetMatch $imageFName }}
+        {{ $image640x := (.Fill "746x320 smart") }}
+            <img src="{{ $image640x.RelPermalink }}" class="d-block w-100 " alt="{{ $image640x.Name }}">
+    {{ end }}   -->
+{{ end }}

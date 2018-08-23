@@ -47,7 +47,7 @@ gulp.task('init-watch', () => {
 })
 
 gulp.task('build', () => {
-    runSequence(['sass', 'js', 'fa','fafonts','fonts', 'images', 'pub-delete'], 'hugo')
+    runSequence(['sass', 'js', 'fa','fafonts','fonts', 'images','images2', 'pub-delete'], 'hugo')
 })
 
 gulp.task('build-preview', () => {

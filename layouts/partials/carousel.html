@@ -1,36 +1,57 @@
-<!-- 
-{{ with .Site.GetPage "/value" }}
-
-  <h2>{{ .Title }}</h2>
- 
-  {{range $index, $element := .Params.values}}
-  {{ $element.heading }} <br/>
-  {{ $element.imageUrl }} <br/>
-  {{ end }}
-
-{{ end }} -->
-
+{{ $folder := "/content/images" }}
+{{ $files := readDir $folder }}
+{{ $sliderurl := "/images/slider/"}}
 
 <div class="card" >
   <div class="card-body">
 
 <div id="mainSlider" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-
-  {{ with .Site.GetPage "/value" }} 
-    {{range $index, $element := .Params.values}}
-        {{ if eq ($index) 0}}
-          <li data-target="#mainSlider" class="active" data-slide-to="{{ $index }}" class="active"></li>
-        {{else}}
-          <li data-target="#mainSlider" data-slide-to="{{ $index }}"></li>
-        {{end}}
-    {{ end }}
-  {{ end }}
-
-
-
-
+      {{ $.Scratch.Set "count" 0 }}
+      {{ range $files }}
+        {{ if hasPrefix .Name "slider"}}
+          {{ if eq ($.Scratch.Get "count") 1}}
+            <li data-target="#mainSlider" class="active" data-slide-to='{{$.Scratch.Get "count"}}' class="active"></li>
+          {{else}}
+            <li data-target="#mainSlider" data-slide-to='{{$.Scratch.Get "count"}}'></li>
+          {{end}}        
+          {{ $.Scratch.Add "count" 1 }}
+        {{end}} 
+      {{ end }}
     </ol>
+  
+    <div class="carousel-inner">
+        {{ $.Scratch.Set "count" 0 }}
+        {{ range $files }}
+        {{ if hasPrefix .Name "slider"}}
+            {{ if eq ($.Scratch.Get "count") 1}}  
+              <div class='carousel-item active'>
+            {{else}}
+              <div class='carousel-item'>
+            {{end}}        
+            <img class="d-block w-100" src="{{$sliderurl}}/{{.Name  }}" alt="Slider image {{.Name  }}"></div>
+            {{ $.Scratch.Add "count" 1 }}
+        {{end}} 
+      {{ end }}
+
+      <a class="carousel-control-prev" href="#mainSlider" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#mainSlider" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    </div>
+    </div>
+     
+      
+
+
+
+<!--
+
     <div class="carousel-inner">
         {{ $.Scratch.Set "active" "" }}
 
@@ -60,7 +81,7 @@
       <div class="carousel-item">
         <div  class="embed-responsive embed-responsive-21by9">
           <iframe  class="embed-responsive-item" id="player" src="https://www.youtube.com/embed/Qzn7iK2lGlU" allowfullscreen></iframe>
-        </div><!-- end .embed-responsive -->
+        </div> 
       </div>
     </div>
     <a class="carousel-control-prev" href="#mainSlider" role="button" data-slide="prev">
@@ -73,4 +94,6 @@
     </a>
   </div>
 </div>
-</div>
+</div> 
+
+-->

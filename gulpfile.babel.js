@@ -6,6 +6,10 @@ import runSequence from 'run-sequence'
 import gulpLoadPlugins from 'gulp-load-plugins'
 import { spawn } from "child_process"
 import tildeImporter from 'node-sass-tilde-importer'
+import changed from 'gulp-changed'
+var imageResize = require('gulp-image-resize');
+
+
 
 const $ = gulpLoadPlugins()
 const browserSync = require('browser-sync').create()
@@ -47,7 +51,7 @@ gulp.task('build', () => {
 })
 
 gulp.task('build-preview', () => {
-    runSequence(['sass', 'js', 'fa','fafonts','fonts', 'images', 'pub-delete'], 'hugo-preview')
+    runSequence(['sass', 'js', 'fa','fafonts','fonts', 'images', 'images2', 'pub-delete'], 'hugo-preview')
 })
 
 
@@ -151,6 +155,17 @@ gulp.task('images', () => {
         .pipe($.print())
         .pipe($.imagemin())
         .pipe(gulp.dest('static/images'));
+});
+
+gulp.task('images2', () => {
+    return gulp.src('content/images/slider*.{png,jpg,jpeg,gif,svg,webp,ico}')
+    .pipe(changed('static/images/slider'))
+    .pipe(imageResize({
+        width : 700,
+        height : 300,
+        crop : true,
+        upscale : false
+      })).pipe(gulp.dest('static/images/slider'));
 });
 
 gulp.task('cms-delete', () => {

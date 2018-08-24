@@ -1,6 +1,7 @@
 /public
 /node_modules
 /static/fonts
+/static/images/slider
 /static/css/app.css
 /static/js/app.js
 .history

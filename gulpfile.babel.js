@@ -187,6 +187,7 @@ gulp.task('pub-delete', () => {
 
 gulp.task('directories', function () {
     return gulp.src('*.*', {read: false})
+        .pipe(gulp.dest('static/images/slider'))  
         .pipe(gulp.dest('./static'))
         .pipe(gulp.dest('./static/images'))
         .pipe(gulp.dest('./static/images/slider'))

@@ -159,7 +159,7 @@ gulp.task('images', () => {
 
 gulp.task('images2', () => {
     return gulp.src('content/images/slider*.{png,jpg,jpeg,gif,svg,webp,ico}')
-    .pipe(changed('static/images/slider'))
+   // .pipe(changed('static/images/slider'))
     .pipe(imageResize({
         width : 700,
         height : 300,

@@ -10,7 +10,7 @@
       {{ $.Scratch.Set "count" 0 }}
       {{ range $files }}
         {{ if hasPrefix .Name "slider"}}
-          {{ if eq ($.Scratch.Get "count") 1}}
+          {{ if eq ($.Scratch.Get "count") 0}}
             <li data-target="#mainSlider" class="active" data-slide-to='{{$.Scratch.Get "count"}}' class="active"></li>
           {{else}}
             <li data-target="#mainSlider" data-slide-to='{{$.Scratch.Get "count"}}'></li>
@@ -24,7 +24,7 @@
         {{ $.Scratch.Set "count" 0 }}
         {{ range $files }}
         {{ if hasPrefix .Name "slider"}}
-            {{ if eq ($.Scratch.Get "count") 1}}  
+            {{ if eq ($.Scratch.Get "count") 0}}  
               <div class='carousel-item active'>
             {{else}}
               <div class='carousel-item'>

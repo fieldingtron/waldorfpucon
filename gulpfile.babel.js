@@ -47,11 +47,11 @@ gulp.task('init-watch', () => {
 })
 
 gulp.task('build', () => {
-    runSequence(['sass', 'js', 'fa','fafonts','fonts', 'images','images2', 'pub-delete'], 'hugo')
+    runSequence(['directories','sass', 'js', 'fa','fafonts','fonts', 'images','images2', 'pub-delete'], 'hugo')
 })
 
 gulp.task('build-preview', () => {
-    runSequence(['sass', 'js', 'fa','fafonts','fonts', 'images', 'images2', 'pub-delete'], 'hugo-preview')
+    runSequence(['directories','sass', 'js', 'fa','fafonts','fonts', 'images', 'images2', 'pub-delete'], 'hugo-preview')
 })
 
 
@@ -180,3 +180,14 @@ gulp.task('pub-delete', () => {
       console.log('Files and folders deleted:\n', paths.join('\n'), '\nTotal Files Deleted: ' + paths.length + '\n');
     })
 })
+
+
+
+//Gulp can create structure folders without any package with this trick:
+
+gulp.task('directories', function () {
+    return gulp.src('*.*', {read: false})
+        .pipe(gulp.dest('./static'))
+        .pipe(gulp.dest('./static/images'))
+        .pipe(gulp.dest('./static/fonts'))
+});

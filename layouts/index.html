@@ -40,16 +40,23 @@
 </section>
 
 <section id="blog-posts">
+  <div class="container">
+      {{ partial "blog-posts.html" . }}
+  </div>
+</section>
+
+  <section id="3col">
     <div class="container">
-        {{ partial "blog-posts.html" . }}
+      {{ partial "3col.html" . }}
     </div>
   </section>
 
-<div class="container">
-  {{ partial "3col.html" . }}
+<section id="contactus">
+  <div class="container">
+    {{ partial "contactus.html" . }}
+  </div>
+</section>
 
-  {{ partial "contactus.html" . }}
 
- 
-</div>
+
 {{ end }}

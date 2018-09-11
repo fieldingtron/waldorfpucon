@@ -1,7 +1,46 @@
-<footer id="main-footer" class="bg-primary text-white py-4">
- <div class="container">
-    <p class="site-footer__copyright text-white">
-        &copy; {{ now.Format "2006" }} &middot; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-    </p>
- </div>
-</footer>
+<footer id="footer" class="bg-secondary text-white">
+    <div class="container p-5">
+   
+           <div class="row text-center text-xs-center text-sm-left text-md-left">
+                   <div class="col-xs-12 col-sm-4 col-md-4">
+                       <h5>Quick links</h5>
+                       <ul class="list-unstyled quick-links">
+                           <li><a href="/"><i class="fa fa-angle-double-right"></i>Waldorf Pucon</a></li>
+                           <li><a href=""><i class="fa fa-angle-double-right"></i>Matricula</a></li>
+                        </ul>
+                   </div>
+                   <div class="col-xs-12 col-sm-4 col-md-4">
+                       <h5>Quick Links</h5>
+                       <ul class="list-unstyled quick-links">
+                           <li><a href="/fotos/"><i class="fa fa-angle-double-right"></i>Fotos</a></li>
+                           <li><a href="/fotos/"><i class="fa fa-angle-double-right"></i>Noticias</a></li>
+   
+                       </ul>
+                   </div>
+                   <div class="col-xs-12 col-sm-4 col-md-4 pl-4">
+                       <h5>Languages</h5>
+                       <ul class="list-unstyled quick-links">
+                           <li><a href="/en/"><i class="fa fa-angle-double-right"></i>English</a></li>
+                           <li><a href="/"><i class="fa fa-angle-double-right"></i>Espanol</a></li>
+               
+                       </ul>
+                   </div>
+               </div>
+   
+       <div class="row">
+           <div class="col-xs-12 col-sm-12 col-md-12  mt-sm-5">
+               <ul class="list-unstyled list-inline social text-center">
+                   <li class="list-inline-item"><a href="https://www.facebook.com/waldorfpucon" target="_blank"><i class="fab fa-facebook fa-3x text-light"></i></a></li>
+                   <li class="list-inline-item"><a href="https://twitter.com/waldorfpucon" target="_blank"><i class="fab fa-twitter fa-3x text-light"></i></a></li>
+                   <li class="list-inline-item"><a href="/contact/" target="_blank"><i class="fas fa-envelope fa-3x text-light"></i></a></li>
+               </ul>
+           </div>
+       </div>	
+       <div class="row">
+           <div class="col-xs-12 col-sm-12 col-md-12 mt-sm-2 text-center">
+               <p> </p>
+               <p class="h6 text-white">   &copy; {{ now.Format "2006" }} &middot; <a href="{{ .Site.BaseURL }}" class="text-white">{{ .Site.Title }}</a></p>
+           </div>		
+       </div>	
+    </div>
+   </footer>

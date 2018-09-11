@@ -31,23 +31,25 @@
 
     <!-- {{ partial "video-intro.html" . }} -->
 
-<div class="container">
-        {{ partial "carousel.html" . }}
 
+<section id="fotos">
+  <div class="container">
+      <h2 class="text-center">Fotos</h2>
+      {{ partial "carousel.html" . }}
+  </div>
+</section>
+
+<section id="blog-posts">
+    <div class="container">
         {{ partial "blog-posts.html" . }}
+    </div>
+  </section>
 
-        {{ partial "3col.html" . }}
+<div class="container">
+  {{ partial "3col.html" . }}
 
-        {{ partial "contactus.html" . }}
+  {{ partial "contactus.html" . }}
 
-        {{ partial "social.html" . }}
-<!-- 
-http://themes.startbootstrap.com/vitality-v2.2.0/video.html
-
-http://wrapbootstrap.com/preview/WB0T1J69J
-    look at http://wrapbootstrap.com/preview/WB02K3KK3
-for timeline 
-    https://startbootstrap.com/template-overviews/agency/
--->
+ 
 </div>
 {{ end }}

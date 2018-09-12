@@ -1,0 +1,29 @@
+{{ define "main" }}
+<div class="container">
+
+    <article>
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+
+        <h4>Images</h4>
+        <div id="lightgallery">
+            {{ with .Resources.ByType "image" }}
+                {{ range . }}
+                <a href="{{ .RelPermalink }}">
+                        {{ $imageResized := (.Fill "320x240") }} 
+                    <img src="{{ $imageResized.RelPermalink }}" />                  
+                </a>
+                {{ end }}
+            {{ end }}   
+
+
+          </div>
+
+     
+         
+
+
+
+    </article>
+</div>
+{{ end }}

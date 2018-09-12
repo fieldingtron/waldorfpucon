@@ -6,7 +6,7 @@
         {{ .Content }}
 
         <h4>Images</h4>
-        <div id="lightgallery">
+        <div id="lightgallery">          
             {{ with .Resources.ByType "image" }}
                 {{ range . }}
                 <a href="{{ .RelPermalink }}">

@@ -31,7 +31,7 @@
   
   })(jQuery); // End of use strict
   
-  $('#aniimated-thumbnials').lightGallery({
+  $('#lightgallery').lightGallery({
     thumbnail:true,
     animateThumb: false,
     showThumbByDefault: false
